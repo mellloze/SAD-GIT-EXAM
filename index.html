@@ -28,11 +28,56 @@
     svg {
       width: 70px;
     }
-    </style>
+
+    #container {
+      fill: #b9d8f5;
+      transition: fill 0.25s;
+    }
+
+    #button {
+      fill: white;
+      transition: transform 0.25s;
+    }
+
+    #toggle:checked + svg #container {
+      fill: #2b4360;
+    }
+
+    #toggle:checked + svg #button {
+      transform: translate(28px, 0);
+    }
+
+    #sun, #moon {
+      transition: opacity 0.25s;
+    }
+
+    #sun {
+      opacity: 1;
+    }
+
+    #moon {
+      opacity: 0;
+    }
+
+    #toggle:checked + svg #sun {
+      opacity: 0;
+    }
+
+    #toggle:checked + svg #moon {
+      opacity: 1;
+    }
+
+    body.dark {
+      background: #17212f;
+      color: white;
+    }
+  </style>
 </head>
+git status
 <body>
   <h1>Day and Night Theme</h1>
   <p>Click the toggle to change the theme.</p>
+
 
     <label id="theme-toggle-button">
     <input type="checkbox" id="toggle">
